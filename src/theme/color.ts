@@ -5,7 +5,7 @@ export class BaseColor {
   static readonly primary = {
     lighter: '#DABCD6', // Sub magenta
     light: '#B571A2',
-    main: '#732169',
+    main: '#6AA339',
   }
 
   static readonly font = {

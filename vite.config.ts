@@ -44,5 +44,10 @@ export default defineConfig(() => {
       strictPort: true,
       port: 3009,
     },
+    define: {
+      process: {
+        env: {},
+      },
+    },
   };
 });
