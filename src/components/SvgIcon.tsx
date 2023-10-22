@@ -1,15 +1,15 @@
-import { useDynamicSvgImport } from "@/hooks";
-import React from "react";
+import { useDynamicSvgImport } from '@/hooks'
+import React from 'react'
 
 interface IProps {
-  iconName: string;
-  wrapperStyle?: string;
-  svgProp?: React.SVGProps<SVGSVGElement>;
+  iconName: string
+  wrapperStyle?: string
+  svgProp?: React.SVGProps<SVGSVGElement>
 }
 
 function SvgIcon(props: IProps) {
-  const { iconName, wrapperStyle, svgProp } = props;
-  const { loading, SvgIcon } = useDynamicSvgImport(iconName);
+  const { iconName, wrapperStyle, svgProp } = props
+  const { loading, SvgIcon } = useDynamicSvgImport(iconName)
 
   return (
     <React.Fragment>
@@ -20,7 +20,7 @@ function SvgIcon(props: IProps) {
         </div>
       )}
     </React.Fragment>
-  );
+  )
 }
 
-export default SvgIcon;
+export default SvgIcon

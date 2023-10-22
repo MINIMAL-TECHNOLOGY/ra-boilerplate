@@ -1,4 +1,4 @@
-const resources = {};
+const resources = {}
 
 const logger_thesis = {
   menu: {
@@ -6,7 +6,7 @@ const logger_thesis = {
       dashboard: 'Dashboard',
     },
   },
-};
+}
 
 const ra = {
   page: {
@@ -58,13 +58,12 @@ const ra = {
   validation: {
     required: 'Required field!',
   },
-};
+}
 
 const messages = {
   logger_thesis,
   ra,
   resources,
-};
+}
 
-export default messages;
-
+export default messages

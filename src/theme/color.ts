@@ -79,4 +79,3 @@ export const primaryColor = {
   A400: BaseColor.primary.main,
   A700: BaseColor.primary.main,
 }
-

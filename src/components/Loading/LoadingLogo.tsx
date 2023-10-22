@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { FC } from 'react'
 
-const LoadingLogo: FC<CircularProgressProps> = props => {
+const LoadingLogo: FC<CircularProgressProps> = (props) => {
   const { size = 75, thickness = 1 } = props
   return (
     <Box

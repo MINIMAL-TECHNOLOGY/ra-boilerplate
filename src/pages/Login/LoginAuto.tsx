@@ -2,7 +2,7 @@ import { Checkbox, FormControlLabel } from '@mui/material'
 import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { useTranslate } from 'react-admin'
 
-const LoginAuto: FC<{ disabled?: boolean }> = props => {
+const LoginAuto: FC<{ disabled?: boolean }> = (props) => {
   const { disabled } = props
 
   const translate = useTranslate()

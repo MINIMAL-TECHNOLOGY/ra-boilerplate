@@ -1,6 +1,6 @@
 // DEFAULT THEME - TYPOGRAPHY
 export const getTypography = () => {
-  const fontFamily = ["Noto Sans KR", "sans-serif"].join(",");
+  const fontFamily = ['Noto Sans KR', 'sans-serif'].join(',')
 
   return {
     fontFamily,
@@ -11,54 +11,54 @@ export const getTypography = () => {
     fontWeightBold: 700,
     h1: {
       fontWeight: 600,
-      fontSize: "2.375rem",
+      fontSize: '2.375rem',
       lineHeight: 1.21,
     },
     h2: {
       fontWeight: 600,
-      fontSize: "1.875rem",
+      fontSize: '1.875rem',
       lineHeight: 1.27,
     },
     h3: {
       fontWeight: 600,
-      fontSize: "1.5rem",
+      fontSize: '1.5rem',
       lineHeight: 1.33,
     },
     h4: {
       fontWeight: 600,
-      fontSize: "1.25rem",
+      fontSize: '1.25rem',
       lineHeight: 1.4,
     },
     h5: {
       fontWeight: 600,
-      fontSize: "1rem",
+      fontSize: '1rem',
       lineHeight: 1.5,
     },
     h6: {
       fontWeight: 400,
-      fontSize: "0.875rem",
+      fontSize: '0.875rem',
       lineHeight: 1.57,
     },
     caption: {
       fontWeight: 400,
-      fontSize: "0.75rem",
+      fontSize: '0.75rem',
       lineHeight: 1.66,
     },
     body1: {
-      fontSize: "0.875rem",
+      fontSize: '0.875rem',
       lineHeight: 1.57,
     },
     body2: {
-      fontSize: "0.75rem",
+      fontSize: '0.75rem',
       lineHeight: 1.66,
     },
     subtitle1: {
-      fontSize: "0.875rem",
+      fontSize: '0.875rem',
       fontWeight: 600,
       lineHeight: 1.57,
     },
     subtitle2: {
-      fontSize: "0.75rem",
+      fontSize: '0.75rem',
       fontWeight: 500,
       lineHeight: 1.66,
     },
@@ -66,7 +66,7 @@ export const getTypography = () => {
       lineHeight: 1.66,
     },
     button: {
-      textTransform: "capitalize" as any,
+      textTransform: 'capitalize' as any,
     },
-  };
-};
+  }
+}

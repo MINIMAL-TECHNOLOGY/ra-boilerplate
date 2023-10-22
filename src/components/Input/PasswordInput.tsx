@@ -55,7 +55,7 @@ const PasswordInput: FC<{
       type={isShowPassword ? 'text' : 'password'}
       label={translate(label)}
       value={value}
-      onChange={e => onChange(e)}
+      onChange={(e) => onChange(e)}
       helperText={helperText}
       // placeholder={placeholder}
       onKeyUp={onKeyUp}
@@ -90,4 +90,3 @@ const PasswordInput: FC<{
 }
 
 export default PasswordInput
-

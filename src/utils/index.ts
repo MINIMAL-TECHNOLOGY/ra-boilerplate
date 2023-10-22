@@ -1,2 +1,2 @@
-export * from "./environments";
-export * from "./FormHelper";
+export * from './environments'
+export * from './FormHelper'

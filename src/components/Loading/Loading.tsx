@@ -1,7 +1,7 @@
 import { Box, CircularProgress, CircularProgressProps } from '@mui/material'
 import { FC } from 'react'
 
-const Loading: FC<CircularProgressProps> = props => {
+const Loading: FC<CircularProgressProps> = (props) => {
   return (
     <Box
       sx={{

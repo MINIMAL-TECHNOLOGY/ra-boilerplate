@@ -1,10 +1,10 @@
-import { Components, createTheme } from "@mui/material";
-import { red } from "@mui/material/colors";
-import { BaseColor } from "./color";
+import { Components, createTheme } from '@mui/material'
+import { red } from '@mui/material/colors'
+import { BaseColor } from './color'
 
 // DEFAULT THEME - COMPONENTS
 export const getOverrideComponents = (): Components<
-  Omit<ReturnType<typeof createTheme>, "components">
+  Omit<ReturnType<typeof createTheme>, 'components'>
 > => {
   return {
     MuiButton: { defaultProps: { disableElevation: true } },
@@ -12,12 +12,12 @@ export const getOverrideComponents = (): Components<
     MuiInputBase: {
       styleOverrides: {
         root: {
-          ".web__layout &, .web__layout--modal &": {
+          '.web__layout &, .web__layout--modal &': {
             border: BaseColor.grey.main,
             backgroundColor: BaseColor.grey.ground,
           },
         },
       },
     },
-  };
-};
+  }
+}

@@ -9,4 +9,3 @@ export const defaultLoginErrorFormValue = {
   identifier: '',
   credential: '',
 }
-

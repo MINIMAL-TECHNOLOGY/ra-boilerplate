@@ -16,4 +16,3 @@ export interface ILoginErrorFormValue {
   identifier?: string
   credential?: string
 }
-

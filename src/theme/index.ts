@@ -4,22 +4,22 @@ import {
   PaletteOptions,
   ThemeOptions,
   TransitionsOptions,
-} from "@mui/material";
-import { MixinsOptions } from "@mui/material/styles/createMixins";
-import { TypographyOptions } from "@mui/material/styles/createTypography";
-import { ZIndexOptions } from "@mui/material/styles/zIndex";
-import { getOverrideComponents } from "./component";
-import { getPalette } from "./palette";
-import { getTypography } from "./typography";
+} from '@mui/material'
+import { MixinsOptions } from '@mui/material/styles/createMixins'
+import { TypographyOptions } from '@mui/material/styles/createTypography'
+import { ZIndexOptions } from '@mui/material/styles/zIndex'
+import { getOverrideComponents } from './component'
+import { getPalette } from './palette'
+import { getTypography } from './typography'
 
 // DEFAULT THEME - BREAKPOINTS
 const getBreakPoints = (): BreakpointsOptions => {
   return {
-    keys: ["xs", "sm", "md", "lg", "xl"],
+    keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     values: { xs: 0, sm: 768, md: 1024, lg: 1266, xl: 1536 },
-    unit: "px",
-  };
-};
+    unit: 'px',
+  }
+}
 
 // DEFAULT THEME - TRANSITIONS
 const getTransitions = (): TransitionsOptions => {
@@ -33,8 +33,8 @@ const getTransitions = (): TransitionsOptions => {
       enteringScreen: 225,
       leavingScreen: 195,
     },
-  };
-};
+  }
+}
 
 // DEFAULT THEME - Z INDEX
 const getZIndex = (): ZIndexOptions => {
@@ -47,23 +47,23 @@ const getZIndex = (): ZIndexOptions => {
     modal: 1300,
     snackbar: 1400,
     tooltip: 1500,
-  };
-};
+  }
+}
 
 // DEFAULT THEME - MIXINS
 const getMixins = (): MixinsOptions => {
   return {
     toolbar: { minHeight: 48, paddingTop: 4, paddingBottom: 4 },
-  };
-};
+  }
+}
 
 // DEFAULT THEME
 const renderTheme = (opts: { mode: PaletteMode }): ThemeOptions => {
-  const { mode } = opts;
+  const { mode } = opts
 
   return {
     breakpoints: getBreakPoints(),
-    direction: "ltr",
+    direction: 'ltr',
     palette: getPalette({ mode: mode }) as PaletteOptions,
     spacing: 4,
     shape: { borderRadius: 4 },
@@ -72,10 +72,10 @@ const renderTheme = (opts: { mode: PaletteMode }): ThemeOptions => {
     typography: getTypography() as TypographyOptions,
     zIndex: getZIndex(),
     components: getOverrideComponents(),
-  };
-};
+  }
+}
 
 export const Theme = {
-  LIGHT: renderTheme({ mode: "light" }),
-  DARK: renderTheme({ mode: "dark" }),
-};
+  LIGHT: renderTheme({ mode: 'light' }),
+  DARK: renderTheme({ mode: 'dark' }),
+}

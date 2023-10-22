@@ -53,7 +53,7 @@ const SemStudioApplication = () => {
       theme={Theme.LIGHT}
       darkTheme={Theme.DARK}>
       <CustomRoutes>
-        {customRoutes.map(route => {
+        {customRoutes.map((route) => {
           return (
             <Route
               key={`${route.path}`}

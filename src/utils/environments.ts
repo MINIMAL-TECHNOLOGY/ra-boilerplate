@@ -1,46 +1,46 @@
 class Environment {
-  private static instance: Environment;
+  private static instance: Environment
 
   constructor() {}
 
   //-------------------------------------------------------------------------
   static getInstance(): Environment {
     if (!this.instance) {
-      this.instance = new Environment();
+      this.instance = new Environment()
     }
-    return this.instance;
+    return this.instance
   }
 
   //-------------------------------------------------------------------------
   get(key: string, defaultValue?: any) {
-    return import.meta.env[key] ?? defaultValue;
+    return import.meta.env[key] ?? defaultValue
   }
 }
 
-export const environment = Environment.getInstance();
+export const environment = Environment.getInstance()
 
 const baseUrlEnv = (): string => {
-  switch (environment.get("VITE_BASE_URL")) {
-    case "production": {
-      return "";
+  switch (environment.get('VITE_BASE_URL')) {
+    case 'production': {
+      return ''
     }
 
-    case "dev-local": {
-      return "http://localhost:3000/v1/api";
+    case 'dev-local': {
+      return 'http://localhost:3000/v1/api'
     }
 
-    case "testing": {
-      return "";
+    case 'testing': {
+      return ''
     }
 
-    case "staging": {
-      return "";
+    case 'staging': {
+      return ''
     }
 
     default: {
-      return "https://develop.sm-erp-be.minimaltek.com/v1/api";
+      return 'https://develop.sm-erp-be.minimaltek.com/v1/api'
     }
   }
-};
+}
 
-export const BASE_URL = baseUrlEnv();
+export const BASE_URL = baseUrlEnv()
