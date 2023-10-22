@@ -1,6 +1,6 @@
 import { ConstantPathNavigation } from '@/constants'
 import { enMessages, krMessages } from '@/locales'
-import Login from '@/pages/Login'
+import { LoginPage } from '@/pages/Login'
 import { checkAuth } from '@/services/auth.service'
 import { Theme } from '@/themes'
 import { BASE_URL } from '@/utils'
@@ -51,7 +51,7 @@ const SemStudioApp = () => {
       disableTelemetry
       i18nProvider={i18nProvider}
       dataProvider={dataProvider}
-      loginPage={Login}
+      loginPage={LoginPage}
       authProvider={authProvider}
       theme={Theme.LIGHT}
       darkTheme={Theme.DARK}

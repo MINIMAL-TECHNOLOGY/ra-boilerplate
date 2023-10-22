@@ -1,3 +1,4 @@
+import { BaseColor } from '@/themes/color'
 import { Checkbox, FormControlLabel } from '@mui/material'
 import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { useTranslate } from 'react-admin'
@@ -22,8 +23,28 @@ const LoginAuto: FC<{ disabled?: boolean }> = (props) => {
   return (
     <FormControlLabel
       disabled={disabled}
-      label={translate('customize.action.remember_me')}
-      control={<Checkbox checked={checked} onChange={handleRememberMe} />}
+      // label={translate('customize.action.remember_me')}
+      label={'로그인 상태 유지'}
+      sx={{
+        height: 17,
+        color: BaseColor.GREY_9B9B9B,
+        '& .MuiFormControlLabel-label': {
+          fontSize: 12,
+          fontWeight: 400,
+          lineHeight: 1.5,
+        },
+      }}
+      control={
+        <Checkbox
+          checked={checked}
+          onChange={handleRememberMe}
+          size="small"
+          sx={{
+            color: BaseColor.GREY_9B9B9B,
+            '& .MuiSvgIcon-root': { fontSize: 17 },
+          }}
+        />
+      }
     />
   )
 }

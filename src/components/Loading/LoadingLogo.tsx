@@ -1,4 +1,4 @@
-// import Logo from '@/assets/svg/logo.svg'
+import Logo from '@/assets/svg/logo.svg'
 import {
   Avatar,
   Box,
@@ -31,7 +31,7 @@ const LoadingLogo: FC<CircularProgressProps> = (props) => {
         <Avatar
           variant="square"
           sx={{ width: 50, height: 'auto' }}
-          // src={Logo}
+          src={Logo}
         />
       </Box>
 

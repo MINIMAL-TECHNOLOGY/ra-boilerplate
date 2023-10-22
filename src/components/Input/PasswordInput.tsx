@@ -33,7 +33,7 @@ const PasswordInput: FC<{
   disabled = false,
   error = false,
   helperText = '',
-  // placeholder = 'Enter your password',
+  placeholder = 'Enter your password',
   onKeyUp,
   sx,
 }) => {
@@ -57,7 +57,7 @@ const PasswordInput: FC<{
       value={value}
       onChange={(e) => onChange(e)}
       helperText={helperText}
-      // placeholder={placeholder}
+      placeholder={placeholder}
       onKeyUp={onKeyUp}
       sx={sx}
       InputProps={{

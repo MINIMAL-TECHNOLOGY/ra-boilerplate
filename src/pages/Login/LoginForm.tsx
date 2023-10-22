@@ -8,7 +8,7 @@ import {
 } from '@/constants'
 import { convertInfoLoginToPayload } from '@/utils'
 import { Button, Grid, TextField } from '@mui/material'
-import { FC, Fragment, useCallback, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import { useLogin, useNotify, useTranslate } from 'react-admin'
 import LoginAuto from './LoginAuto'
 
@@ -117,56 +117,60 @@ const LoginForm: FC<{}> = () => {
   )
 
   return (
-    <Fragment>
-      <Grid item xs={12} sm={12} xl={12}>
-        <TextField
-          autoComplete="off"
-          disabled={isLoading}
-          fullWidth
-          required
-          size="medium"
-          error={Boolean(error.identifier)}
-          label={translate('ra.auth.username')}
-          value={formValue.identifier?.value}
-          onChange={(e) => onFormValueChange(LoginFormKey.identifier, e)}
-          helperText={error.identifier}
-          // placeholder="Enter your username"
-          onKeyUp={handlePressEnter}
-          autoFocus
-          sx={{ '& .MuiInputBase-root': { bgcolor: 'unset', border: 'unset' } }}
-        />
+    <Grid container rowGap={6}>
+      <Grid item xs={12} container rowGap={3}>
+        <Grid item xs={12}>
+          <TextField
+            autoComplete="off"
+            disabled={isLoading}
+            fullWidth
+            required
+            size="small"
+            error={Boolean(error.identifier)}
+            value={formValue.identifier?.value}
+            onChange={(e) => onFormValueChange(LoginFormKey.identifier, e)}
+            helperText={error.identifier}
+            placeholder="ID (사원번호)"
+            onKeyUp={handlePressEnter}
+            autoFocus
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <PasswordInput
+            disabled={isLoading}
+            fullWidth
+            size="small"
+            sizeIcon="small"
+            error={Boolean(error.credential)}
+            value={formValue.credential?.value ?? ''}
+            onChange={(e: any) => onFormValueChange(LoginFormKey.credential, e)}
+            helperText={error.credential}
+            onKeyUp={handlePressEnter}
+            label=""
+            placeholder="비밀번호"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <LoginAuto disabled={isLoading} />
+        </Grid>
       </Grid>
 
-      <Grid item xs={12} sm={12} xl={12}>
-        <PasswordInput
-          disabled={isLoading}
-          fullWidth
-          size="medium"
-          sizeIcon="medium"
-          error={Boolean(error.credential)}
-          value={formValue.credential?.value ?? ''}
-          onChange={(e: any) => onFormValueChange(LoginFormKey.credential, e)}
-          helperText={error.credential}
-          onKeyUp={handlePressEnter}
-          sx={{ '& .MuiInputBase-root': { bgcolor: 'unset', border: 'unset' } }}
-        />
-      </Grid>
-
-      <Grid item xs={12} sm={12} xl={12} sx={{ textAlign: 'left' }}>
-        <LoginAuto disabled={isLoading} />
-      </Grid>
-
-      <Grid item xs={12} sm={12} xl={12}>
+      <Grid item xs={12}>
         <Button
           disabled={isLoading}
           fullWidth
-          size="large"
+          size="small"
           variant="contained"
           onClick={handleSubmit}>
-          {isLoading ? <Loading size={24} /> : translate('ra.auth.sign_in')}
+          {
+            isLoading ? <Loading size={15} /> : '로그인'
+            // translate('ra.auth.sign_in')
+          }
         </Button>
       </Grid>
-    </Fragment>
+    </Grid>
   )
 }
 

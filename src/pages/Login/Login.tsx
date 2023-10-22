@@ -1,17 +1,20 @@
-import LoginLeftImage from '@/assets/images/login-left.png'
-import { Grid } from '@mui/material'
+import LoginImage from '@/assets/images/login.png'
+import LoginLogo from '@/assets/images/text-logo-lines.png'
+import { Box, Grid } from '@mui/material'
 import { FC, useEffect } from 'react'
-import { useLocaleState } from 'react-admin'
 import { useNavigate } from 'react-router-dom'
 import LoginForm from './LoginForm'
 
 const Login: FC<{}> = () => {
-  const [locale] = useLocaleState()
   const navigate = useNavigate()
+
   const authenticated = localStorage.getItem('auth')
 
   useEffect(() => {
-    if (!authenticated) return
+    if (!authenticated) {
+      return
+    }
+
     navigate(`/`, { replace: true })
 
     return () => {}
@@ -19,11 +22,20 @@ const Login: FC<{}> = () => {
   }, [])
 
   return (
-    <Grid container sx={{ height: '100vh', width: '100vw' }}>
-      <Grid item xs={6} sx={{ display: { xs: 'none', sm: 'unset' } }}>
+    <Grid id="login__page" container sx={{ height: '100vh', width: '100vw' }}>
+      <Grid
+        item
+        sm={8}
+        sx={{
+          width: 1,
+          height: 1,
+          display: { xs: 'none', sm: 'unset' },
+          bgcolor: 'grey.500',
+        }}>
         <img
-          src={LoginLeftImage}
-          alt="login-page-image"
+          loading="lazy"
+          src={LoginImage}
+          alt="login-image"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </Grid>
@@ -31,35 +43,34 @@ const Login: FC<{}> = () => {
       <Grid
         item
         xs={12}
-        sm={6}
+        sm={4}
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ p: { xs: 4, sm: 8 } }}>
+        sx={{ px: { xs: 8, sm: 10, xl: 13.5 } }}>
         <Grid
           item
           xs={12}
-          sm={12}
-          xl={12}
           container
-          rowSpacing={4}
-          sx={{ maxWidth: { xs: '100%', sm: '60%' } }}>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            xl={12}
-            container
-            justifyContent="center"
-            sx={{ mb: 8 }}>
+          rowGap={25}
+          sx={{ maxWidth: { xs: 1, sm: 0.8 } }}>
+          <Grid item xs={12} container justifyContent="center">
             <img
+              loading="lazy"
               className="logo"
-              // src={locale === 'ko' ? LogoKr : LogoEn}
+              src={LoginLogo}
               alt="logo"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'cover',
+              }}
             />
           </Grid>
 
-          <LoginForm />
+          <Grid item xs={12}>
+            <LoginForm />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

@@ -1,10 +1,14 @@
-import { LazyLoading } from '@/components'
-import Login from './Login'
+import { LoadingLogo } from '@/components'
+import { Suspense, lazy } from 'react'
 
-export default function () {
+const Page = lazy(() => import('./Login'))
+
+const LoginPage = () => {
   return (
-    <LazyLoading>
-      <Login />
-    </LazyLoading>
+    <Suspense fallback={<LoadingLogo />}>
+      <Page />
+    </Suspense>
   )
 }
+
+export { LoginPage }
