@@ -2,8 +2,6 @@ import { Loading, PasswordInput } from '@/components'
 import {
   defaultLoginErrorFormValue,
   defaultLoginFormValue,
-  ILoginErrorFormValue,
-  ILoginFormValue,
   LoginFormKey,
 } from '@/constants'
 import { convertInfoLoginToPayload } from '@/utils'
@@ -11,6 +9,7 @@ import { Button, Grid, TextField } from '@mui/material'
 import { FC, useCallback, useState } from 'react'
 import { useLogin, useNotify, useTranslate } from 'react-admin'
 import LoginAuto from './LoginAuto'
+import { ILoginErrorFormValue, ILoginFormValue } from '@/interfaces'
 
 const LoginForm: FC<{}> = () => {
   const login = useLogin()
@@ -130,7 +129,7 @@ const LoginForm: FC<{}> = () => {
             value={formValue.identifier?.value}
             onChange={(e) => onFormValueChange(LoginFormKey.identifier, e)}
             helperText={error.identifier}
-            placeholder="ID (사원번호)"
+            placeholder={translate('customize.auth.username_placeholder')}
             onKeyUp={handlePressEnter}
             autoFocus
           />
@@ -148,7 +147,7 @@ const LoginForm: FC<{}> = () => {
             helperText={error.credential}
             onKeyUp={handlePressEnter}
             label=""
-            placeholder="비밀번호"
+            placeholder={translate('customize.auth.password_placeholder')}
           />
         </Grid>
 
@@ -164,10 +163,7 @@ const LoginForm: FC<{}> = () => {
           size="small"
           variant="contained"
           onClick={handleSubmit}>
-          {
-            isLoading ? <Loading size={15} /> : '로그인'
-            // translate('ra.auth.sign_in')
-          }
+          {isLoading ? <Loading size={15} /> : translate('ra.auth.sign_in')}
         </Button>
       </Grid>
     </Grid>

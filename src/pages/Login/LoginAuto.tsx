@@ -23,8 +23,7 @@ const LoginAuto: FC<{ disabled?: boolean }> = (props) => {
   return (
     <FormControlLabel
       disabled={disabled}
-      // label={translate('customize.action.remember_me')}
-      label={'로그인 상태 유지'}
+      label={translate('customize.auth.remember_me')}
       sx={{
         height: 17,
         color: BaseColor.GREY_9B9B9B,
