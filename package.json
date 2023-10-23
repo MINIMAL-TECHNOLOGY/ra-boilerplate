@@ -20,7 +20,7 @@
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@mui/x-date-pickers": "^6.16.3",
-    "@ra/infra": "https://github.com/phatnt199/ra-infra.git",
+    "@ra/infra": "github:phatnt199/ra-infra",
     "@reduxjs/toolkit": "^1.9.7",
     "browserslist-to-esbuild": "^1.2.0",
     "compressorjs": "^1.2.1",
