@@ -1,5 +1,5 @@
 import { ReactNode, Suspense } from 'react'
-import { Loading, LoadingLogo } from './Loading'
+import { LoadingLogo } from './loading'
 
 type TProps = {
   children?: ReactNode

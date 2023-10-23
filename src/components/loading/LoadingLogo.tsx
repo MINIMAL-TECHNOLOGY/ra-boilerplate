@@ -15,8 +15,8 @@ const LoadingLogo: FC<CircularProgressProps> = (props) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
-        height: '100%',
+        width: 1,
+        height: 1,
         position: 'relative',
       }}>
       <Box

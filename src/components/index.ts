@@ -1,3 +1,3 @@
-export { Loading, LoadingLogo } from './Loading'
-export { PasswordInput } from './Input'
+export * from './loading'
+export * from './input'
 export { default as LazyLoading } from './LazyLoading'
