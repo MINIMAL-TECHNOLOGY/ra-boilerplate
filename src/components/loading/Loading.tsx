@@ -1,5 +1,5 @@
-import { Box, CircularProgress, CircularProgressProps } from '@mui/material'
 import { FC } from 'react'
+import { Box, CircularProgress, CircularProgressProps } from '../mui-components'
 
 const Loading: FC<CircularProgressProps> = (props) => {
   return (

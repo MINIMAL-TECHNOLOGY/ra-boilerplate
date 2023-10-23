@@ -1,6 +1,6 @@
 import LoginImage from '@/assets/images/login.png'
 import LoginLogo from '@/assets/images/text-logo-lines.png'
-import { Box, Grid } from '@mui/material'
+import { Grid } from '@/components'
 import { FC, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import LoginForm from './LoginForm'

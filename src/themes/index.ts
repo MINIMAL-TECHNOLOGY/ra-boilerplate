@@ -1,19 +1,19 @@
-import {
-  BreakpointsOptions,
-  PaletteMode,
-  PaletteOptions,
-  ThemeOptions,
-  TransitionsOptions,
-} from '@mui/material'
-import { MixinsOptions } from '@mui/material/styles/createMixins'
-import { TypographyOptions } from '@mui/material/styles/createTypography'
-import { ZIndexOptions } from '@mui/material/styles/zIndex'
 import { getOverrideComponents } from './component'
 import { getPalette } from './palette'
 import { getTypography } from './typography'
+import {
+  PaletteMode,
+  TypographyOptions,
+  ZIndex,
+  Mixins,
+  BreakpointsOptions,
+  ThemeOptions,
+  TransitionsOptions,
+  PaletteOptions,
+} from '@/components'
 
 // DEFAULT THEME - BREAKPOINTS
-const getBreakPoints = (): BreakpointsOptions => {
+const getBreakPoints = () => {
   return {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     values: { xs: 0, sm: 768, md: 1024, lg: 1266, xl: 1536 },
@@ -22,7 +22,7 @@ const getBreakPoints = (): BreakpointsOptions => {
 }
 
 // DEFAULT THEME - TRANSITIONS
-const getTransitions = (): TransitionsOptions => {
+const getTransitions = () => {
   return {
     duration: {
       shortest: 150,
@@ -37,7 +37,7 @@ const getTransitions = (): TransitionsOptions => {
 }
 
 // DEFAULT THEME - Z INDEX
-const getZIndex = (): ZIndexOptions => {
+const getZIndex = () => {
   return {
     mobileStepper: 1000,
     fab: 1050,
@@ -51,7 +51,7 @@ const getZIndex = (): ZIndexOptions => {
 }
 
 // DEFAULT THEME - MIXINS
-const getMixins = (): MixinsOptions => {
+const getMixins = () => {
   return {
     toolbar: { minHeight: 48, paddingTop: 4, paddingBottom: 4 },
   }
@@ -62,15 +62,15 @@ const renderTheme = (opts: { mode: PaletteMode }): ThemeOptions => {
   const { mode } = opts
 
   return {
-    breakpoints: getBreakPoints(),
+    breakpoints: getBreakPoints() as BreakpointsOptions,
     direction: 'ltr',
     palette: getPalette({ mode: mode }) as PaletteOptions,
     spacing: 4,
     shape: { borderRadius: 4 },
-    transitions: getTransitions(),
-    mixins: getMixins(),
+    transitions: getTransitions() as TransitionsOptions,
+    mixins: getMixins() as Mixins,
     typography: getTypography() as TypographyOptions,
-    zIndex: getZIndex(),
+    zIndex: getZIndex() as ZIndex,
     components: getOverrideComponents(),
   }
 }

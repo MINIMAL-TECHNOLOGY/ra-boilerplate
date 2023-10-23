@@ -1,5 +1,5 @@
+import { Checkbox, FormControlLabel } from '@/components'
 import { BaseColor } from '@/themes/color'
-import { Checkbox, FormControlLabel } from '@mui/material'
 import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { useTranslate } from 'react-admin'
 

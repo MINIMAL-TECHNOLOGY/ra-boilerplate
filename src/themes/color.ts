@@ -1,4 +1,4 @@
-import { Color } from '@mui/material'
+import { Color } from '@/components'
 
 export class BaseColor {
   // All Color in Figma

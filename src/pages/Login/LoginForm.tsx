@@ -1,11 +1,10 @@
-import { Loading, PasswordInput } from '@/components'
+import { Button, Grid, Loading, PasswordInput, TextField } from '@/components'
 import {
   defaultLoginErrorFormValue,
   defaultLoginFormValue,
   LoginFormKey,
 } from '@/constants'
 import { convertInfoLoginToPayload } from '@/utils'
-import { Button, Grid, TextField } from '@mui/material'
 import { FC, useCallback, useState } from 'react'
 import { useLogin, useNotify, useTranslate } from 'react-admin'
 import LoginAuto from './LoginAuto'
@@ -48,8 +47,6 @@ const LoginForm: FC<{}> = () => {
   const setLoginFormValueHelper = (
     name: string,
     event: any,
-    // formValue: ILoginFormValue,
-    // eslint-disable-next-line no-unused-vars
     setFormValue: (prev: any) => void,
   ) => {
     switch (name) {

@@ -1,14 +1,13 @@
-import Visibility from '@mui/icons-material/Visibility'
-import VisibilityOff from '@mui/icons-material/VisibilityOff'
+import { FC, useCallback, useState } from 'react'
+import { useTranslate } from 'react-admin'
+import { VisibilityIcon, VisibilityOffIcon } from '../mui-icons'
 import {
   IconButton,
   InputAdornment,
   SxProps,
   TextField,
   Tooltip,
-} from '@mui/material'
-import { FC, useCallback, useState } from 'react'
-import { useTranslate } from 'react-admin'
+} from '../mui-components'
 
 const PasswordInput: FC<{
   value: string
@@ -75,9 +74,9 @@ const PasswordInput: FC<{
                   edge="end"
                   disabled={disabled}>
                   {isShowPassword ? (
-                    <VisibilityOff fontSize={sizeIcon} />
+                    <VisibilityOffIcon fontSize={sizeIcon} />
                   ) : (
-                    <Visibility fontSize={sizeIcon} />
+                    <VisibilityIcon fontSize={sizeIcon} />
                   )}
                 </IconButton>
               </span>

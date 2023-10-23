@@ -1,11 +1,11 @@
 import Logo from '@/assets/svg/logo.svg'
+import { FC } from 'react'
 import {
   Avatar,
   Box,
   CircularProgress,
   CircularProgressProps,
-} from '@mui/material'
-import { FC } from 'react'
+} from '../mui-components'
 
 const LoadingLogo: FC<CircularProgressProps> = (props) => {
   const { size = 75, thickness = 1 } = props

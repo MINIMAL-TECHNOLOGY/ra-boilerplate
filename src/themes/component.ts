@@ -1,4 +1,4 @@
-import { Components, createTheme } from '@mui/material'
+import { Components, Theme } from '@/components'
 import {
   AutocompleteOverride,
   ButtonOverride,
@@ -7,7 +7,7 @@ import {
 
 // DEFAULT THEME - COMPONENTS
 export const getOverrideComponents = (): Components<
-  Omit<ReturnType<typeof createTheme>, 'components'>
+  Omit<Theme, 'components'>
 > => {
   return {
     ...ButtonOverride(),
