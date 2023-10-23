@@ -1,13 +1,13 @@
 import { ConstantPathNavigation } from '@/constants'
-import { enMessages, krMessages } from '@/locales'
+import { en, ko } from '@/locales'
 import { LoginPage } from '@/pages/Login'
 import { checkAuth } from '@/services/auth.service'
 import { Theme } from '@/themes'
+import '@/themes/index.css'
 import { BASE_URL } from '@/utils'
 import { getAuthProvider, getDataProvider, getI18nProvider } from '@ra/infra'
 import { Admin, CustomRoutes } from 'react-admin'
 import { Route } from 'react-router-dom'
-import './themes/index.css'
 
 //---------------------------------------------------
 const listLanguages = [
@@ -15,10 +15,7 @@ const listLanguages = [
   { locale: 'ko', name: 'Korean' },
 ]
 
-const i18n = {
-  en: { ...enMessages },
-  kr: { ...krMessages },
-}
+const i18n = { en, ko }
 
 //---------------------------------------------------
 const dataProvider = getDataProvider({
