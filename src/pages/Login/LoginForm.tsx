@@ -4,11 +4,11 @@ import {
   defaultLoginFormValue,
   LoginFormKey,
 } from '@/constants'
-import { convertInfoLoginToPayload } from '@/utils'
 import { FC, useCallback, useState } from 'react'
 import { useLogin, useNotify, useTranslate } from 'react-admin'
 import LoginAuto from './LoginAuto'
 import { ILoginErrorFormValue, ILoginFormValue } from '@/interfaces'
+import { convertInfoLoginToPayload, setLoginFormValueHelper } from '@/helpers'
 
 const LoginForm: FC<{}> = () => {
   const login = useLogin()
@@ -43,31 +43,6 @@ const LoginForm: FC<{}> = () => {
     return rs
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formValue.identifier?.value, formValue.credential?.value])
-
-  const setLoginFormValueHelper = (
-    name: string,
-    event: any,
-    setFormValue: (prev: any) => void,
-  ) => {
-    switch (name) {
-      case LoginFormKey.identifier:
-      case LoginFormKey.credential:
-        setFormValue((prev: any) => ({
-          ...prev,
-          [name]: {
-            ...prev[name],
-            value: event.target.value,
-          },
-        }))
-        break
-      default:
-        setFormValue((prev: any) => ({
-          ...prev,
-          [name]: event.target.value,
-        }))
-        break
-    }
-  }
 
   const handleSubmit = useCallback(() => {
     const err = validateLoginForm()
