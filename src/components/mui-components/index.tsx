@@ -1,3 +1,5 @@
+//--------------------------------------------------------------------------
+// Components
 export { default as Accordion } from '@mui/material/Accordion'
 export { default as AccordionDetails } from '@mui/material/AccordionDetails'
 export { default as AccordionSummary } from '@mui/material/AccordionSummary'
@@ -54,10 +56,23 @@ export { default as Tooltip } from '@mui/material/Tooltip'
 export { default as Typography } from '@mui/material/Typography'
 export { default as useMediaQuery } from '@mui/material/useMediaQuery'
 
-// type
-export type { Color, PaletteMode } from '@mui/material' //
+//--------------------------------------------------------------------------
+// Styles
+export { ThemeProvider, styled, createTheme } from '@mui/material/styles'
+
+//--------------------------------------------------------------------------
+// Types
+export type { Color, PaletteMode } from '@mui/material'
 export type { CircularProgressProps } from '@mui/material/CircularProgress'
-export { ThemeProvider, styled } from '@mui/material/styles'
-export type { SxProps } from '@mui/material/styles'
-export type { Components } from '@mui/material/styles/components'
-export type { Theme } from '@mui/material/styles/createTheme'
+export type {
+  Components,
+  SxProps,
+  Theme,
+  ZIndex,
+  Mixins,
+  PaletteOptions,
+  ThemeOptions,
+  BreakpointsOptions,
+  TransitionsOptions,
+  TypographyVariantsOptions as TypographyOptions,
+} from '@mui/material/styles'
