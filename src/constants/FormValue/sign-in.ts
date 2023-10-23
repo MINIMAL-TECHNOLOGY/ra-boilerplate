@@ -1,4 +1,4 @@
-import { ILoginFormValue } from '@/constants/interfaces'
+import { ILoginFormValue } from '@/interfaces'
 
 export const defaultLoginFormValue: ILoginFormValue = {
   identifier: { scheme: 'username', value: '' },
