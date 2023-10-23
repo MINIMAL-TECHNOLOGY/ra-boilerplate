@@ -23,7 +23,6 @@
   - **footer(s)**: Provide a extended information
 
 <!-- #### Types
-
 - **build** / ~~**vendor**~~: Changes that affect the build system or external dependencies
 - **chore**: Other changes that don't modify src or test files
 - **ci**: Changes to our CI configuration files and scripts
@@ -38,6 +37,8 @@
 
 | Type               | Description                                                                                            |
 | ------------------ | ------------------------------------------------------------------------------------------------------ |
+| add                | A new file, function,...                                                                               |
+| adjust             | A code change that something in code                                                                   |
 | build / ~~vendor~~ | Changes that affect the build system or external dependencies                                          |
 | chore              | Other changes that don't modify src or test files                                                      |
 | ci                 | Changes to our CI configuration files and scripts                                                      |
@@ -46,6 +47,21 @@
 | fix                | A bug fix                                                                                              |
 | perf               | A code change that improves performance                                                                |
 | refactor           | A code change that neither fixes a bug nor adds a feature                                              |
+| resolve            | Resolve conflict when merge branch                                                                     |
 | revert             | Reverts a previous commit                                                                              |
 | style              | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) |
 | test               | Adding missing tests or correcting existing tests                                                      |
+
+#### Examples:
+
+- build:
+
+```
+  git commit -m "build: update react-admin dependency"
+```
+
+- feat:
+
+```
+  git commit -m "feat [Login]: add validate form"
+```
