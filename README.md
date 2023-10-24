@@ -106,7 +106,7 @@
 
 ## Config steps:
 
-1. You can use npm, yarn or pnpm by your own
+1. You can use npm, yarn or pnpm by your own. Currently, ra-boilerplate use yarn
 2. Run command `(npm/yarn/pnpm) run reconfig <your-github-link>`: which will help you change the git remote
    Eg: `pnpm reconfig https://github.com/MINIMAL-TECHNOLOGY/ra-boilerplate.git`
 
