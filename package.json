@@ -6,16 +6,17 @@
   "scripts": {
     "dev": "vite",
     "dev:local": "vite --mode dev-local",
+    "prebuild": "sh ./scripts/clean.sh",
     "build": "tsc && vite build",
     "lint": "eslint $(git diff --name-only HEAD **/*.js, **/*.jsx, **/*.ts, **/*.tsx | xargs)",
     "lint:fix": "eslint --fix-dry-run $(git diff --name-only HEAD **/*.js, **/*.jsx, **/*.ts, **/*.tsx| xargs)",
-    "prepreview": "npm run build",
+    "prepreview": "yarn build",
     "preview": "vite preview",
     "prepare": "husky install",
     "prettier": "npx prettier src --check",
     "prettier:fix": "yarn prettier -- --write",
     "format": "yarn prettier:fix && yarn lint",
-    "reconfig": "sh reconfig.sh"
+    "reconfig": "sh ./scripts/reconfig.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

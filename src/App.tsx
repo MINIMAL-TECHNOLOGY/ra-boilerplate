@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom'
 // Add resource for react-admin
 const resourceRoutes: ResourceProps[] = [
   {
-    name: '/',
+    name: '/login',
     list: <h1>List Component </h1>,
     show: <h1>Show Component </h1>,
     edit: <h1>Edit Component </h1>,
