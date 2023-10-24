@@ -10,6 +10,7 @@ export default defineConfig(() => {
     build: {
       outDir: 'build',
       minify: true,
+      reportCompressedSize: false,
       sourcemap: false,
       // --> ["chrome79", "edge92", "firefox91", "safari13.1"]
       target: browserslistToEsbuild(['>0.2%', 'not dead', 'not op_mini all']),
