@@ -59,12 +59,13 @@ const getMixins = () => {
 
 // DEFAULT THEME
 const renderTheme = (opts: { mode: PaletteMode }): ThemeOptions => {
-  const { mode } = opts
+  // const { mode } = opts
 
   return {
     breakpoints: getBreakPoints() as BreakpointsOptions,
     direction: 'ltr',
-    palette: getPalette({ mode: mode }) as PaletteOptions,
+    // custom by your own
+    // palette: getPalette({ mode: mode }) as PaletteOptions,
     spacing: 4,
     shape: { borderRadius: 4 },
     transitions: getTransitions() as TransitionsOptions,

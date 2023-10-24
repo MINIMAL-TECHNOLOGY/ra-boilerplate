@@ -20,7 +20,7 @@ class Environment {
 export const environment = Environment.getInstance()
 
 const baseUrlEnv = (): string => {
-  switch (environment.get('VITE_BASE_URL')) {
+  switch (environment.get('VITE_NODE_ENV')) {
     case 'production': {
       return ''
     }
@@ -38,7 +38,7 @@ const baseUrlEnv = (): string => {
     }
 
     default: {
-      return 'https://develop.sm-erp-be.minimaltek.com/v1/api'
+      return ''
     }
   }
 }

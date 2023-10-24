@@ -1,18 +1,21 @@
 {
-  "name": "sems_studio_fe",
+  "name": "ra-boilerplate",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:local": "vite --mode dev-local",
     "build": "tsc && vite build",
     "lint": "eslint $(git diff --name-only HEAD **/*.js, **/*.jsx, **/*.ts, **/*.tsx | xargs)",
     "lint:fix": "eslint --fix-dry-run $(git diff --name-only HEAD **/*.js, **/*.jsx, **/*.ts, **/*.tsx| xargs)",
+    "prepreview": "npm run build",
     "preview": "vite preview",
     "prepare": "husky install",
     "prettier": "npx prettier src --check",
     "prettier:fix": "yarn prettier -- --write",
-    "format": "yarn prettier:fix && yarn run lint:fix"
+    "format": "yarn prettier:fix && yarn run lint",
+    "reconfig": "sh reconfig.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -20,7 +23,7 @@
     "@mui/icons-material": "^5.14.14",
     "@mui/material": "^5.14.14",
     "@mui/x-date-pickers": "^6.16.3",
-    "@ra/infra": "github:phatnt199/ra-infra",
+    "@ra/infra": "github:TrNgTien/ra-infra",
     "@reduxjs/toolkit": "^1.9.7",
     "browserslist-to-esbuild": "^1.2.0",
     "compressorjs": "^1.2.1",
@@ -29,6 +32,7 @@
     "hangul-js": "^0.2.6",
     "lodash": "^4.17.21",
     "material-react-table": "^1.15.1",
+    "ra-i18n-polyglot": "^4.15.1",
     "react": "^18.2.0",
     "react-admin": "^4.15.1",
     "react-daum-postcode": "^3.1.3",

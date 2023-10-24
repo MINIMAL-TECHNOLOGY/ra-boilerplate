@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import SemStudioApp from './App'
+import MainApplication from './App'
 import './themes/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
@@ -8,6 +8,6 @@ const root = ReactDOM.createRoot(document.getElementById('root')!)
 //----------------------------------------------
 root.render(
   <StrictMode>
-    <SemStudioApp />
+    <MainApplication />
   </StrictMode>,
 )

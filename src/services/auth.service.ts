@@ -10,7 +10,7 @@ export const checkAuth = () => {
   }
 
   return new Promise<void>((resolve, reject) => {
-    const token = JSON.parse(
+    const tokenValue = JSON.parse(
       localStorage.getItem(LocalStorageKeys.KEY_AUTH_TOKEN) ?? '',
     )?.value
 
@@ -18,7 +18,7 @@ export const checkAuth = () => {
       .send(`auth/who-am-i`, {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${tokenValue}`,
           'Content-type': 'application/json',
         },
       })

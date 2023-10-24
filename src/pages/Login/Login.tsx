@@ -1,6 +1,5 @@
-import LoginImage from '@/assets/images/login.png'
-import LoginLogo from '@/assets/images/text-logo-lines.png'
-import { Grid } from '@/components'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import { Avatar, Grid } from '@/components'
 import { FC, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import LoginForm from './LoginForm'
@@ -34,7 +33,7 @@ const Login: FC<{}> = () => {
         }}>
         <img
           loading="lazy"
-          src={LoginImage}
+          src={'https://source.unsplash.com/random?wallpapers'}
           alt="login-image"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -55,17 +54,9 @@ const Login: FC<{}> = () => {
           rowGap={25}
           sx={{ maxWidth: { xs: 1, sm: 0.8 } }}>
           <Grid item xs={12} container justifyContent="center">
-            <img
-              loading="lazy"
-              className="logo"
-              src={LoginLogo}
-              alt="logo"
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'cover',
-              }}
-            />
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
           </Grid>
 
           <Grid item xs={12}>
