@@ -1,8 +1,10 @@
 import { ConstantPathNavigation } from '@/constants'
 import { LoginPage } from '@/pages/Login'
+import { store } from '@/redux/store'
 import { Theme } from '@/themes'
 import '@/themes/index.css'
 import { Admin, CustomRoutes, Resource, ResourceProps } from 'react-admin'
+import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
 
 // Add resource for react-admin
@@ -22,34 +24,36 @@ const customRoutes = [
 
 const MainApplication = () => {
   return (
-    <Admin
-      title="React-Admin Boilerplate"
-      requireAuth
-      disableTelemetry
-      // i18nProvider={i18nProvider}
-      // dataProvider={dataProvider}
-      // authProvider={authProvider}
-      loginPage={LoginPage}
-      theme={Theme.LIGHT}
-      darkTheme={Theme.DARK}
-      defaultTheme="light">
-      {resourceRoutes.map((props: ResourceProps) => {
-        // eslint-disable-next-line react/prop-types
-        return <Resource {...props} key={props.name} />
-      })}
-
-      <CustomRoutes>
-        {customRoutes.map((route) => {
-          return (
-            <Route
-              key={`${route.path}`}
-              path={route.path}
-              element={route.element}
-            />
-          )
+    <Provider store={store}>
+      <Admin
+        title="React-Admin Boilerplate"
+        requireAuth
+        disableTelemetry
+        // i18nProvider={i18nProvider}
+        // dataProvider={dataProvider}
+        // authProvider={authProvider}
+        loginPage={LoginPage}
+        theme={Theme.LIGHT}
+        darkTheme={Theme.DARK}
+        defaultTheme="light">
+        {resourceRoutes.map((props: ResourceProps) => {
+          // eslint-disable-next-line react/prop-types
+          return <Resource {...props} key={props.name} />
         })}
-      </CustomRoutes>
-    </Admin>
+
+        <CustomRoutes>
+          {customRoutes.map((route) => {
+            return (
+              <Route
+                key={`${route.path}`}
+                path={route.path}
+                element={route.element}
+              />
+            )
+          })}
+        </CustomRoutes>
+      </Admin>
+    </Provider>
   )
 }
 
